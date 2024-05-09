@@ -7,4 +7,4 @@ config/
 .vscode/
 .vscode/settings.json
 
-config/firebaseServiceAccountKey.json
+# config/firebaseServiceAccountKey.json
