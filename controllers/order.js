@@ -23,17 +23,17 @@ const pusher = new Pusher({
 const sendSMS = async (phoneNumber, reference) => {
   const customerData = {
     recipient: [`0${phoneNumber.slice(-9)}`],
-    sender: "Wudalounge",
+    sender: "proDasher",
     message: `Your order (Id: ${reference.slice(
       -9
-    )}) has been delivered! Enjoy your meal and thanks for choosing Wuda Lounge!`,
+    )}) has been delivered! Enjoy your meal and thanks for choosing proDasher!`,
 
     is_schedule: "false",
     schedule_date: "",
   };
   const adminData = {
     recipient: ["0240298910"],
-    sender: "Wudalounge",
+    sender: "proDasher",
     message: `Order delivered. Id: ${reference.slice(-9)}.`,
     is_schedule: "false",
     schedule_date: "",

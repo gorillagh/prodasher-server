@@ -60,17 +60,17 @@ exports.createPayment = async (req, res) => {
 const sendSMS = async (phoneNumber, total, reference, paymentMethod) => {
   const customerData = {
     recipient: [`0${phoneNumber.slice(-9)}`],
-    sender: "Wudalounge",
+    sender: "proDasher",
     message: `Order successful! Amount: GHC${total}. Order Id: ${reference.slice(
       -9
-    )}. Please go to your dashboard to see order details. Thanks for choosing Wuda Lounge.`,
+    )}. Please go to your dashboard to see order details. Thanks for choosing proDasher.`,
 
     is_schedule: "false",
     schedule_date: "",
   };
   const adminData = {
     recipient: ["0240298910"],
-    sender: "Wudalounge",
+    sender: "proDasher",
     message: `New order received from 0${phoneNumber.slice(
       -9
     )}, Id: ${reference.slice(
@@ -189,7 +189,7 @@ exports.verifyTransactionAndCreateOrder = async (req, res) => {
       `https://api.paystack.co/transaction/verify/${transaction.reference}`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.PAYSTACK_TEST_SECRET_KEY}`,
+          Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
         },
       }
     );
